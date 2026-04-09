@@ -51,7 +51,7 @@ Esses itens também não estavam descritos no repo do [dacort](https://github.co
     export PATH="${KREW_ROOT:-$HOME/.krew}/bin:/home/novarin/go/bin:$PATH"
     ```
 
-    [https://github.com/kubernetes-sigs/karpenter/issues/1444#issuecomment-2243676644](https://github.com/kubernetes-sigs/karpenter/issues/1444#issuecomment-2243676644)
+    [kubernetes-sigs/karpenter/issues/1444](https://github.com/kubernetes-sigs/karpenter/issues/1444#issuecomment-2243676644)
 
 2. Necessário instalar binário **yq**, versão Golang
 
@@ -64,7 +64,7 @@ Esses itens também não estavam descritos no repo do [dacort](https://github.co
     tar xz && sudo mv yq_${PLATFORM} /usr/local/bin/yq
     ```
 
-    [https://github.com/mikefarah/yq?tab=readme-ov-file#wget](https://github.com/mikefarah/yq?tab=readme-ov-file#wget)
+    [mikefarah/yq](https://github.com/mikefarah/yq?tab=readme-ov-file#wget)
 
 3. Necessário instalar os binários em Go
 
@@ -141,7 +141,7 @@ Esses itens também não estavam descritos no repo do [dacort](https://github.co
 
 ## Dashboards
 
-### Habilitar interface Prometheus
+### Habilitar dashboard Prometheus
 
 ```bash
 kubectl --namespace monitoring port-forward $POD_NAME 3000
