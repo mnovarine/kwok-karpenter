@@ -1,0 +1,48 @@
+# KWOK Helm values for Karpenter testing
+# This mimics the configuration from Karpenter's install-kwok.sh script
+# but uses the standard KWOK Helm chart
+
+# Use latest version (or pin to specific version)
+image:
+  repository: registry.k8s.io/kwok/kwok
+  # tag: v0.7.0  # Optional: pin to specific version
+
+# Resource limits similar to Karpenter's script
+resources:
+  limits:
+    cpu: 2
+    memory: 4Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+# Tolerations: Allow scheduling on control-plane but not on kwok nodes
+tolerations:
+  # Default tolerations for control-plane (included by default)
+  - key: node-role.kubernetes.io/control-plane
+    operator: Exists
+    effect: NoSchedule
+  - key: node-role.kubernetes.io/master
+    operator: Exists
+    effect: NoSchedule
+  # Additional: tolerate CriticalAddonsOnly (like Karpenter's script)
+  - key: CriticalAddonsOnly
+    operator: Equal
+    effect: NoSchedule
+
+# Node affinity: Avoid scheduling on kwok nodes themselves
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kwok.x-k8s.io/node
+          operator: DoesNotExist
+
+# Enable hostNetwork for kind clusters (optional)
+# hostNetwork: true
+
+# Keep single replica (default)
+replicaCount: 1
+
+# Namespace will be kube-system (set during install)
