@@ -42,7 +42,7 @@ Utilizado como referência o repo do [dacord](https://github.com/dacort/kinda-yu
 
 ## Problemas encontrados na instalação do Kwok/Karpenter
 
-Ao executar o comando `make apply-with-kind` no item [3. Instalação do Karpenter](?#3-Instalação-do-Karpenter), foram encontrados vários erros, resolvidos com a instalação dos itens abaixo.<br>
+Ao executar o comando `make apply-with-kind` no item [3. Instalação do Karpenter](#3-Instalação-do-Karpenter), foram encontrados vários erros, resolvidos com a instalação dos itens abaixo.<br>
 Esses itens também não estavam descritos no repo do [dacort](https://github.com/dacort/kinda-yunikarp), que utilizei como referência.
 
 1. Necessário adicionar o conteúdo da variável **GOPATH** na variável **PATH**
