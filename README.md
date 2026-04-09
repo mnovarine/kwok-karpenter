@@ -42,7 +42,7 @@ Utilizado como referência o repo do [dacord](https://github.com/dacort/kinda-yu
 
 ## Problemas encontrados na instalação do Kwok/Karpenter
 
-Ao executar o comando `make apply-with-kind` no item [3. Instalação do Karpenter](#3-Instalação-do-Karpenter), foram encontrados vários erros, resolvidos com a instalação dos itens abaixo.<br>
+Ao executar o comando `make apply-with-kind` no item [3 . Instalação do Karpenter](#instalação), foram encontrados vários erros, resolvidos com a instalação dos itens abaixo.<br>
 Esses itens também não estavam descritos no repo do [dacort](https://github.com/dacort/kinda-yunikarp), que utilizei como referência.
 
 1. Necessário adicionar o conteúdo da variável **GOPATH** na variável **PATH**
@@ -51,7 +51,7 @@ Esses itens também não estavam descritos no repo do [dacort](https://github.co
     export PATH="${KREW_ROOT:-$HOME/.krew}/bin:/home/novarin/go/bin:$PATH"
     ```
 
-    [Referência](https://github.com/kubernetes-sigs/karpenter/issues/1444#issuecomment-2243676644```)
+    [https://github.com/kubernetes-sigs/karpenter/issues/1444#issuecomment-2243676644](https://github.com/kubernetes-sigs/karpenter/issues/1444#issuecomment-2243676644)
 
 2. Necessário instalar binário **yq**, versão Golang
 
@@ -64,7 +64,7 @@ Esses itens também não estavam descritos no repo do [dacort](https://github.co
     tar xz && sudo mv yq_${PLATFORM} /usr/local/bin/yq
     ```
 
-    [Referência](https://github.com/mikefarah/yq?tab=readme-ov-file#wget)
+    [https://github.com/mikefarah/yq?tab=readme-ov-file#wget](https://github.com/mikefarah/yq?tab=readme-ov-file#wget)
 
 3. Necessário instalar os binários em Go
 
@@ -75,7 +75,7 @@ Esses itens também não estavam descritos no repo do [dacort](https://github.co
     go install github.com/google/ko@latest
     ```
 
-    [helm-docs](https://github.com/norwoodj/helm-docs)
+    [helm-docs](https://github.com/norwoodj/helm-docs)<br>
     [actionlint](https://github.com/rhysd/actionlint)
 
 4. Necessário instalar **golangci-lint**
@@ -86,7 +86,7 @@ Esses itens também não estavam descritos no repo do [dacort](https://github.co
     sudo mv ./bin/golangci-lint /usr/local/bin/
     ```
 
-    [Referência](https://golangci-lint.run/docs/welcome/install/local/)
+    [https://golangci-lint.run/docs/welcome/install/local/](https://golangci-lint.run/docs/welcome/install/local/)
 
 5. Setar as variáveis de ambiente e fazer o build
 
